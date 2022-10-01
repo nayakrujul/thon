@@ -1,17 +1,17 @@
 from setuptools import setup, find_packages
 
-long_description = 'A better version of typing - read the docs at https://www.github.com/nayakrujul/better-typing'
+long_description = 'A very concise language - read the docs at https://www.github.com/nayakrujul/thon'
 
 setup(
-  name = 'better-typing',
+  name = 'thon',
   version = '1.0',
   license='Apache',
-  description = 'A better version of typing',
+  description = 'A very concise language',
   author = 'Rujul Nayak',
   author_email = 'rujulnayak@outlook.com',
-  url = 'https://github.com/nayakrujul/better-typing',
-  download_url = 'https://github.com/nayakrujul/better-typing/archive/refs/tags/v_01.tar.gz',
-  keywords = ['typing', 'type'],
+  url = 'https://github.com/nayakrujul/thon',
+  download_url = 'https://github.com/nayakrujul/thon/archive/refs/tags/v_01.tar.gz',
+  keywords = ['golfing', 'code-golf', 'language'],
   install_requires=[
       ],
   classifiers=[
