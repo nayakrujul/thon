@@ -29,5 +29,10 @@ setup(
   ],
   long_description=long_description,
   long_description_content_type='text/x-rst',
-  packages = find_packages()
+  packages = find_packages(),
+  entry_points = {
+    'console_scripts': [
+      'thon = thon.main:from_cmdline'
+    ]
+  }
 )
