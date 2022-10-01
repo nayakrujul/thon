@@ -6,4 +6,5 @@ thon/main.py
 thon.egg-info/PKG-INFO
 thon.egg-info/SOURCES.txt
 thon.egg-info/dependency_links.txt
+thon.egg-info/entry_points.txt
 thon.egg-info/top_level.txt

@@ -1,0 +1,3 @@
+[console_scripts]
+thon = thon.main:from_cmdline
+
