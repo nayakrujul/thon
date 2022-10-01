@@ -174,7 +174,7 @@ def from_cmdline():
     parser.add_argument('-jc', dest='join_comma', type=bool, nargs='?', const=True, default=False, help= 'Join the elements with a comma?')
     parser.add_argument('-jn', dest='join_newline', type=bool, nargs='?', const=True, default=False, help= 'Join the elements with a newline?')
     args = parser.parse_args()
-    code = args.code
+    code = args.code[0]
     if args.input_int:
         code = 'n' + code
     if args.input_ints:
