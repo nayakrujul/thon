@@ -1,4 +1,5 @@
 from thon.List import List
+import argparse
 
 def numberToBase(n, b):
     if n == 0:
@@ -159,3 +160,33 @@ def run(code, _stack=()):
             stack.push(fillstr.rjust(num, fillchar))
         index += 1
     return stack
+
+def from_cmdline():
+    parser = argparse.ArgumentParser(prog ='thon',
+                                     description ='Run Thon code using the thon command')
+    parser.add_argument('code', metavar ='code', type=str, nargs=1, help= 'The Thon code to run')
+    parser.add_argument('-ii', dest='input_int', type=bool, nargs='?', const=True, default=False, help= 'Add an implicit integer input?')
+    parser.add_argument('-il', dest='input_ints', type=bool, nargs='?', const=True, default=False, help= 'Add an implicit list of integers input?')
+    parser.add_argument('-si', dest='input_str', type=bool, nargs='?', const=True, default=False, help= 'Add an implicit string input?')
+    parser.add_argument('-sl', dest='input_strs', type=bool, nargs='?', const=True, default=False, help= 'Add an implicit list of strings input?')
+    parser.add_argument('-el', dest='stack_elements', type=int, nargs='?', const=1, default=0, help= 'The number of elements from the top of the stack to print at the end')
+    parser.add_argument('-js', dest='join_space', type=bool, nargs='?', const=True, default=False, help= 'Join the elements with a space?')
+    parser.add_argument('-jc', dest='join_comma', type=bool, nargs='?', const=True, default=False, help= 'Join the elements with a comma?')
+    parser.add_argument('-jn', dest='join_newline', type=bool, nargs='?', const=True, default=False, help= 'Join the elements with a newline?')
+    args = parser.parse_args()
+    if args.input_int:
+        code = 'n' + code
+    if args.input_ints:
+        code = 'N' + code
+    if args.input_str:
+        code = 'c' + code
+    if args.input_strs:
+        code = 'C' + code
+    out = run(code)[:args.stack_elements]
+    if args.join_space:
+        print(*out, sep=' ')
+    if args.join_comma:
+        print(*out, sep=', ')
+    if args.join_newline:
+        print(*out, sep='\n')
+        
