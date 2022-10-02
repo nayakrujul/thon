@@ -37,6 +37,8 @@ def run(code, _stack=()):
                 pass
             string += code[index]
             stack.push(eval(string))
+        elif char == 'K':
+            stack.push(list(stack).copy())
         elif char == 'L':
             stack.push([])
         elif char == 'S':
