@@ -171,12 +171,15 @@ def from_cmdline():
     parser.add_argument('-il', dest='input_ints', type=bool, nargs='?', const=True, default=False, help= 'Add an implicit list of integers input?')
     parser.add_argument('-si', dest='input_str', type=bool, nargs='?', const=True, default=False, help= 'Add an implicit string input?')
     parser.add_argument('-sl', dest='input_strs', type=bool, nargs='?', const=True, default=False, help= 'Add an implicit list of strings input?')
-    parser.add_argument('-el', dest='stack_elements', type=int, nargs='?', const=1, default=0, help= 'The number of elements from the top of the stack to print at the end')
+    parser.add_argument('-el', dest='stack_elements', type=int, nargs='?', const=0, default=1, help= 'The number of elements from the top of the stack to print at the end')
     parser.add_argument('-js', dest='join_space', type=bool, nargs='?', const=True, default=False, help= 'Join the elements with a space?')
     parser.add_argument('-jc', dest='join_comma', type=bool, nargs='?', const=True, default=False, help= 'Join the elements with a comma?')
     parser.add_argument('-jn', dest='join_newline', type=bool, nargs='?', const=True, default=False, help= 'Join the elements with a newline?')
+    parser.add_argument('-hw', dest='hello_world', type=bool, nargs='?', const=True, default=False, help= 'Push "Hello, world!" to the top of the stack?')
     args = parser.parse_args()
     code = args.code[0]
+    if args.hello_world:
+        code = '"Hello, world!"' + code
     if args.input_int:
         code = 'n' + code
     if args.input_ints:
