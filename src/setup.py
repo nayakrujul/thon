@@ -4,7 +4,7 @@ long_description = 'A very concise language - read the docs at https://www.githu
 
 setup(
   name = 'thon',
-  version = '2.0',
+  version = '2.1',
   license='Apache',
   description = 'A very concise language',
   author = 'Rujul Nayak',
