@@ -10,7 +10,7 @@ setup(
   author = 'Rujul Nayak',
   author_email = 'rujulnayak@outlook.com',
   url = 'https://github.com/nayakrujul/thon',
-  download_url = 'https://github.com/nayakrujul/thon/archive/refs/tags/v_16.tar.gz',
+  download_url = 'https://github.com/nayakrujul/thon/archive/refs/tags/v_20.tar.gz',
   keywords = ['golfing', 'code-golf', 'language'],
   install_requires=[
       ],
