@@ -294,5 +294,7 @@ def from_cmdline():
         print(*out, sep=', ')
     elif args.join_newline:
         print(*out, sep='\n')
+    elif len(out) == 1:
+        print(out[0])
     else:
         print(out)
