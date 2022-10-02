@@ -160,6 +160,104 @@ def run(code, _stack=()):
                     fillstr = item2
                     break
             stack.push(fillstr.rjust(num, fillchar))
+        elif char == '+':
+            for i, item1 in enumerate(stack):
+                if isinstance(item1, (int, float)):
+                    num2 = item1
+                    break
+            for item2 in stack[i+1:]:
+                if isinstance(item2, (int, float)):
+                    num1 = item2
+                    break
+            stack.push(num1 + num2)
+        elif char == '-':
+            for i, item1 in enumerate(stack):
+                if isinstance(item1, (int, float)):
+                    num2 = item1
+                    break
+            for item2 in stack[i+1:]:
+                if isinstance(item2, (int, float)):
+                    num1 = item2
+                    break
+            stack.push(num1 - num2)
+        elif char == '*':
+            for i, item1 in enumerate(stack):
+                if isinstance(item1, (int, float)):
+                    num2 = item1
+                    break
+            for item2 in stack[i+1:]:
+                if isinstance(item2, (int, float)):
+                    num1 = item2
+                    break
+            stack.push(num1 * num2)
+        elif char == '/':
+            for i, item1 in enumerate(stack):
+                if isinstance(item1, (int, float)):
+                    num2 = item1
+                    break
+            for item2 in stack[i+1:]:
+                if isinstance(item2, (int, float)):
+                    num1 = item2
+                    break
+            stack.push(num1 / num2)
+        elif char == '^':
+            for i, item1 in enumerate(stack):
+                if isinstance(item1, (int, float)):
+                    num2 = item1
+                    break
+            for item2 in stack[i+1:]:
+                if isinstance(item2, (int, float)):
+                    num1 = item2
+                    break
+            stack.push(num1 ** num2)
+        elif char == '>':
+            for i, item1 in enumerate(stack):
+                if isinstance(item1, (int, float)):
+                    num2 = item1
+                    break
+            for item2 in stack[i+1:]:
+                if isinstance(item2, (int, float)):
+                    num1 = item2
+                    break
+            stack.push(num1 > num2)
+        elif char == '<':
+            for i, item1 in enumerate(stack):
+                if isinstance(item1, (int, float)):
+                    num2 = item1
+                    break
+            for item2 in stack[i+1:]:
+                if isinstance(item2, (int, float)):
+                    num1 = item2
+                    break
+            stack.push(num1 < num2)
+        elif char == '=':
+            for i, item1 in enumerate(stack):
+                if isinstance(item1, (int, float)):
+                    num2 = item1
+                    break
+            for item2 in stack[i+1:]:
+                if isinstance(item2, (int, float)):
+                    num1 = item2
+                    break
+            stack.push(num1 == num2)
+        elif char == '?':
+            if_true = ''
+            index += 1
+            while code[index] != ':':
+                if_true += code[index]
+                index += 1
+            index += 1
+            try:
+                if_false = ''
+                while code[index] != ';':
+                    if_false += code[index]
+                    index += 1
+            except:
+                pass
+            if stack[0]:
+                stack = run(if_true, stack)
+            else:
+                stack = run(if_false, stack)
         index += 1
     return stack
 
