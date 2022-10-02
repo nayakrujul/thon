@@ -288,9 +288,10 @@ def from_cmdline():
         code = 'C' + code
     out = run(code)[:args.stack_elements]
     if args.join_space:
-        print(*out, sep=' ')
-    if args.join_comma:
+        print(*out)
+    elif args.join_comma:
         print(*out, sep=', ')
-    if args.join_newline:
+    elif args.join_newline:
         print(*out, sep='\n')
-        
+    else:
+        print(out)
