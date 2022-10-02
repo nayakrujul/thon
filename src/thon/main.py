@@ -50,6 +50,7 @@ def run(code, _stack=()):
             for item in stack:
                 if isinstance(item, list):
                     stack.push(List(item).product)
+                    break
         elif char == 'A':
             for l, item1 in enumerate(stack):
                 if isinstance(item1, list):
