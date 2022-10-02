@@ -35,7 +35,7 @@ def run(code, _stack=()):
                     index += 1
             except:
                 pass
-            string += code[index]
+            string += '"'
             stack.push(eval(string))
         elif char == 'K':
             stack.push(list(stack).copy())
