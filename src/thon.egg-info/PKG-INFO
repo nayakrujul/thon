@@ -1,12 +1,12 @@
 Metadata-Version: 2.1
 Name: thon
-Version: 1.4
+Version: 2.0
 Summary: A very concise language
 Home-page: https://github.com/nayakrujul/thon
 Author: Rujul Nayak
 Author-email: rujulnayak@outlook.com
 License: Apache
-Download-URL: https://github.com/nayakrujul/thon/archive/refs/tags/v_01.tar.gz
+Download-URL: https://github.com/nayakrujul/thon/archive/refs/tags/v_20.tar.gz
 Keywords: golfing,code-golf,language
 Platform: UNKNOWN
 Classifier: Development Status :: 3 - Alpha
