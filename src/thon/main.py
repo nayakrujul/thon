@@ -1,5 +1,6 @@
 from thon.List import List
 import argparse
+from string import ascii_lowercase, ascii_uppercase
 
 def numberToBase(n, b):
     if n == 0:
@@ -37,6 +38,16 @@ def run(code, _stack=()):
                 pass
             string += '"'
             stack.push(eval(string))
+        elif char == 'H':
+            for item in stack:
+                if isinstance(item, int):
+                    stack.push(ascii_uppercase[item])
+                    break
+        elif char == 'h':
+            for item in stack:
+                if isinstance(item, int):
+                    stack.push(ascii_lowercase[item])
+                    break
         elif char == 'K':
             stack.push(list(stack).copy())
         elif char == 'L':
